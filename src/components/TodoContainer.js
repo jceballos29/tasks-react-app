@@ -21,6 +21,9 @@ function TodoContainer({render,handleCreateTaskButton,handleDelteTask, handleCom
         />
       ));
 
+    const upcoming = todos.filter(value => value.isCompleted === false);
+    const finished = todos.filter(value => value.isCompleted === true);
+
     useEffect(() => {
         setRenderTasks(render)
     }, [render])
@@ -38,6 +41,10 @@ function TodoContainer({render,handleCreateTaskButton,handleDelteTask, handleCom
 
     return (
         <div className="TodoContainer">
+            <div className="TypeTask">
+                <h3 className="upcoming">Upcoming: {upcoming.length}</h3>
+                <h3 className="finished">Finished: {finished.length}</h3>
+            </div>
             <Todo tasksList={tasksList}/>
             <CreateContainer handleCreateTaskButton={handleCreateTaskButton}/>
         </div>

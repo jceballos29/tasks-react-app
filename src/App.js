@@ -49,7 +49,7 @@ function App() {
 
   return (
     <div className="App">
-      <h1>- TASK APP -</h1>
+      <h1>TASK APP</h1>
       <TodoContainer 
         render={renderTasks} 
         handleCreateTaskButton={handleCreateTaskButton}
@@ -63,6 +63,7 @@ function App() {
         register = {register}
         handleSubmit={handleSubmit}
         renderTasks={renderTasks}
+        handleCreateTaskButton={handleCreateTaskButton}
         />
         : ''
       }
