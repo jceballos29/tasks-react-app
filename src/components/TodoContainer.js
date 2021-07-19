@@ -2,28 +2,44 @@ import React, {useState, useEffect} from 'react'
 import { getTasks } from '../services/getTasks'
 import './TodoContainer.css'
 import CreateContainer from './TodoContainer/CreateContainer'
-import Title from './TodoContainer/Title'
 import Todo from './TodoContainer/Todo'
+import TodoItem from './TodoItem'
 
-function TodoContainer() {
-
+function TodoContainer({render,handleCreateTaskButton,handleDelteTask, handleCompleteTask}) {
+    const [renderTasks, setRenderTasks] = useState(true)
     const [todos, setTodos] = useState([]);
+
+    const tasksList = todos.map((value) => (
+        <TodoItem
+          key={value.id}
+          id={value.id}
+          task={value.task}
+          student={value.student}
+          isCompleted={value.isCompleted}
+          handleDelteTask={handleDelteTask}
+          handleCompleteTask={handleCompleteTask}
+        />
+      ));
+
+    useEffect(() => {
+        setRenderTasks(render)
+    }, [render])
     
     useEffect(() => {
-        const getData = async () => {
-            const data = await getTasks()
-            setTodos(data.todos)
+        if (renderTasks) {
+            const getData = async () => {
+                const data = await getTasks()
+                setTodos(data.todos)
+            }
+            getData(); 
+            setRenderTasks(false);
         }
-        getData();
-    }, [])
+    }, [renderTasks])
 
-    console.log(todos)
-    
     return (
         <div className="TodoContainer">
-            <Title/>
-            <Todo/>
-            <CreateContainer/>
+            <Todo tasksList={tasksList}/>
+            <CreateContainer handleCreateTaskButton={handleCreateTaskButton}/>
         </div>
     )
 }
