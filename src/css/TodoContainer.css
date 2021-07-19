@@ -1,6 +1,6 @@
 .TodoContainer {
   width: 700px;
-  height: 600px;
+  height: 500px;
   padding: 40px 20px 20px 20px;
   display: grid;
   grid-template-columns: 1fr;
