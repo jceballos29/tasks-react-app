@@ -3,7 +3,7 @@ import "../css/TodoItem.css";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faTimes } from "@fortawesome/free-solid-svg-icons";
 
-function TodoItem({ id, task, student, isCompleted,handleDelteTask, handleCompleteTask }) {
+function TodoItem({ id, task, student, isCompleted, handleDelteTask, handleCompleteTask }) {
   const [backgroundColor, setBackgraoundColor] = useState("");
   const [color, setColor] = useState("");
   const [textDecoration, settextDecoration] = useState("");
@@ -27,17 +27,17 @@ function TodoItem({ id, task, student, isCompleted,handleDelteTask, handleComple
 
   return (
     <div className="TodoItem" style={style}>
-      <input 
-        className="isCompleted" 
-        type="checkbox" 
+      <input
+        className="isCompleted"
+        type="checkbox"
         defaultChecked={checked}
-        onChange={()=>handleCompleteTask(id,{task, student, isCompleted})}
+        onChange={() => handleCompleteTask(id, { task, student, isCompleted })}
       />
       <h4 className="Tasks" style={lineThrough}>
         {task}
       </h4>
       <p className="Student">{student}</p>
-      <FontAwesomeIcon className="Delete" icon={faTimes} onClick={() => handleDelteTask(id)}/>
+      <FontAwesomeIcon className="Delete" icon={faTimes} onClick={() => handleDelteTask(id)} />
     </div>
   );
 }

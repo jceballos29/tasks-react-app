@@ -1,6 +1,6 @@
 import React from 'react'
 
-function Todo({tasksList}) {
+function Todo({ tasksList }) {
     return (
         <div className="Todo">
             {tasksList}

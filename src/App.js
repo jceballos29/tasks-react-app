@@ -18,15 +18,15 @@ function App() {
   }
 
   const renderCreateTodo = () => {
-    if(newTask) {
+    if (newTask) {
       return (
         <CreateTodo
-            handleCreateTask={onCreateTask}
-            register={register}
-            handleSubmit={handleSubmit}
-            renderTasks={renderTasks}
-            handleCreateTaskButton={handleCreateTaskButton}
-          />
+          handleCreateTask={onCreateTask}
+          register={register}
+          handleSubmit={handleSubmit}
+          renderTasks={renderTasks}
+          handleCreateTaskButton={handleCreateTaskButton}
+        />
       )
     }
   }
