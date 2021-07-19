@@ -1,5 +1,5 @@
 import React, { useState } from 'react'
-import {useForm} from 'react-hook-form'
+import { useForm } from 'react-hook-form'
 import './css/App.css';
 import CreateTodo from './components/CreateTodo';
 import TodoContainer from './components/TodoContainer';
@@ -9,7 +9,7 @@ import { deleteTask } from './services/deleteTask';
 
 function App() {
 
-  const {register, handleSubmit, reset} = useForm();
+  const { register, handleSubmit, reset } = useForm();
   const [newTask, setNewTask] = useState(false)
   const [renderTasks, setRenderTasks] = useState(false)
 
@@ -17,10 +17,24 @@ function App() {
     setNewTask(value)
   }
 
+  const renderCreateTodo = () => {
+    if(newTask) {
+      return (
+        <CreateTodo
+            handleCreateTask={onCreateTask}
+            register={register}
+            handleSubmit={handleSubmit}
+            renderTasks={renderTasks}
+            handleCreateTaskButton={handleCreateTaskButton}
+          />
+      )
+    }
+  }
+
   const onCreateTask = (data) => {
     const createData = async () => {
       await createTask(data);
-      reset(); 
+      reset();
       setRenderTasks(true)
     }
     createData();
@@ -37,7 +51,7 @@ function App() {
     setRenderTasks(false)
   }
 
-  const onCompleteTask = (id,data) => {
+  const onCompleteTask = (id, data) => {
     data.isCompleted = !data.isCompleted
     const completeData = async () => {
       await completeTask(id, data)
@@ -50,22 +64,14 @@ function App() {
   return (
     <div className="App">
       <h1>TASK APP</h1>
-      <TodoContainer 
-        render={renderTasks} 
+      <TodoContainer
+        render={renderTasks}
         handleCreateTaskButton={handleCreateTaskButton}
         handleDelteTask={onDeleteTask}
         handleCompleteTask={onCompleteTask}
       />
       {
-        newTask  
-        ? <CreateTodo
-        handleCreateTask={onCreateTask}
-        register = {register}
-        handleSubmit={handleSubmit}
-        renderTasks={renderTasks}
-        handleCreateTaskButton={handleCreateTaskButton}
-        />
-        : ''
+        renderCreateTodo()
       }
 
     </div>
