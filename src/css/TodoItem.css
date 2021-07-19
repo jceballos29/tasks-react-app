@@ -1,38 +1,36 @@
 .TodoItem {
-    display: grid;
-    height: 30px;
-    width: 90%;
-    grid-auto-columns: 1fr;
-    grid-template-columns: 0.2fr 1.7fr 1fr 0.1fr;
-    grid-template-rows: 1fr;
-    gap: 0px 0px;
-    grid-template-areas: "isCompleted Tasks Student Delete";
-    justify-content: center;
-    align-content: center;
-    align-items: center;
-    margin: 5px;
-    padding: 15px 10px;
-    border-radius: 10px;
-    box-shadow: 0 0 3px rgba(0, 0, 0, 0.4);
-  }
-  
-  .Tasks {
-    grid-area: Tasks;
-    margin-left: 10px;
-    margin-right: 10px;
-    align-self: center;
-  }
-  .Student {
-    grid-area: Student;
-    text-align: right;
-    margin-right: 20px;
+  display: grid;
+  height: 30px;
+  width: 90%;
+  grid-auto-columns: 1fr;
+  grid-template-columns: 0.2fr 1.7fr 1fr 0.1fr;
+  grid-template-rows: 1fr;
+  gap: 0px 0px;
+  grid-template-areas: "isCompleted Tasks Student Delete";
+  justify-content: center;
+  align-content: center;
+  align-items: center;
+  margin: 5px;
+  padding: 15px 10px;
+  border-radius: 10px;
+  box-shadow: 0 0 3px rgba(0, 0, 0, 0.4);
+}
 
-  }
-  .isCompleted {
-    grid-area: isCompleted;
-  }
-  .Delete {
-    grid-area: Delete;
-    cursor: pointer;
-
-  }
+.Tasks {
+  grid-area: Tasks;
+  margin-left: 10px;
+  margin-right: 10px;
+  align-self: center;
+}
+.Student {
+  grid-area: Student;
+  text-align: right;
+  margin-right: 20px;
+}
+.isCompleted {
+  grid-area: isCompleted;
+}
+.Delete {
+  grid-area: Delete;
+  cursor: pointer;
+}
