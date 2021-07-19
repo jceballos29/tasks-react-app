@@ -1,16 +1,12 @@
 # Tasks App
 
-_Aplicación básica de tareas en la que se puede asignar una tarea especifica a uno de los compañeros del curso de REACT._
+_Aplicación básica de tareas en la que se puede asignar una tarea a un estudiante en específico._
+## Funcionalidad
 
-_Se puede verificar el cumplimiento de la tarea y validar cuantas tareas pendiestes y cuantas tareas finalizadas quedan_
-
-## Comenzando
-
-[Tasks App](https://github.com/jceballos29/tasks-react-app.git) 
-_El anterior link es para poder ingresar al repositorio del proyecto_
-
-Mira **Despliegue** para conocer como visualizar el proyecto.
-
+* Agregar tarea
+* Eliminar tarea
+* Completar tarea
+* Difertenciar tareas pendientes de tareas finalizadas
 ## Despliegue
 
 _Apicacióin desplegada con vercel_
