@@ -57,12 +57,31 @@
     background:  #ede7f6;
 }
 
+.CreateContainer button:hover {
+    background:  #d2b4de;
+}
+
+.CreateContainer button:active {
+    transition: 0.3s all;
+    transform: translateZ(15px);
+    border: 1px solid transparent;
+    opacity: 0.8;
+  }
+
 .Todo {
     display: flex;
     flex-direction: column;
     align-items: center;
     padding: 0px 20px; 
     overflow-y: auto;
+    grid-area: Todo; 
+}
+
+.NoTodo {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
     grid-area: Todo; 
 }
 

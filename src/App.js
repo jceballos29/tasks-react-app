@@ -1,6 +1,6 @@
 import React, { useState } from 'react'
 import {useForm} from 'react-hook-form'
-import './App.css';
+import './css/App.css';
 import CreateTodo from './components/CreateTodo';
 import TodoContainer from './components/TodoContainer';
 import { completeTask } from './services/completeTask';
